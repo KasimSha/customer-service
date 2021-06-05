@@ -2,6 +2,7 @@ const initState = {
   list: [],
 
   refemp: {},
+  sampleList: ["Delhi", "Kolkata", "Chennai", "Mumbai"],
 };
 
 // ACTION TYPES

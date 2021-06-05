@@ -157,19 +157,19 @@ export function CustomerUpsert() {
         </div>
 
         <div className="mb-1">
-          {state.employee.refemp.id ? (
+          {state.customer.refemp.id ? (
             <input
               type="button"
               className="btn btn-secondary w-100"
-              value="Update Employee"
-              onClick={() => updateEmployee()}
+              value="Update Customer"
+              onClick={() => updateCustomer()}
             />
           ) : (
             <input
               type="button"
               className="btn btn-secondary w-100"
-              value="Add Employee"
-              onClick={(e) => addEmployee(e)}
+              value="Add Customer"
+              onClick={(e) => addCustomer(e)}
             />
           )}
         </div>

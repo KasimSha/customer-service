@@ -13,7 +13,7 @@ export function CustomerModal() {
   return (
     <Modal show={state.customer.refemp.id} onHide={() => updateRefObj()}>
       <Modal.Header closeButton>
-        <Modal.Title>Hello, {state.employee.refemp.userName}</Modal.Title>
+        <Modal.Title>Hello, {state.customer.refemp.userName}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <ListGroup>
@@ -24,7 +24,7 @@ export function CustomerModal() {
             Last Name - {state.customer.refemp.lastName}
           </ListGroup.Item>
           <ListGroup.Item>
-            User Name - {state.ustomer.refemp.userName}
+            User Name - {state.customer.refemp.userName}
           </ListGroup.Item>
           <ListGroup.Item>Password - {"*********"}</ListGroup.Item>
           <ListGroup.Item>Email - {"******@gmail.com"}</ListGroup.Item>
