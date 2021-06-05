@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import {
-  deleteEmployeeAction,
-  getAllEmployeeAction,
-  getByIdEmployeeAction,
-  updateRefEmployee,
-} from "../redux/EmpoyeeReducer";
-import { EmployeeModal } from "./EmployeeModal";
+  deleteCustomerAction,
+  getAllCustomerAction,
+  getByIdCustomerAction,
+  updateRefCustomer,
+} from "../redux/CustomerReducer";
+import { CustomerModal } from "./CustomerModal";
 
-export function EmployeeList() {
+export function CustomerList() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -19,26 +19,26 @@ export function EmployeeList() {
 
   // Used to Initialize :: READ THE DATA FROM API
   useEffect(() => {
-    dispatch(getAllEmployeeAction());
+    dispatch(getAllCustomerAction());
   }, []);
 
-  const deleteEmployee = (item, index) => {
-    dispatch(deleteEmployeeAction(item));
+  const deleteCustomer = (item, index) => {
+    dispatch(deleteCustomerAction(item));
 
     setSuccessOperation(true);
     setTimeout(() => setSuccessOperation(false), 2000);
   };
 
-  const updateEmployee = (item) => {
+  const updateCustomer = (item) => {
     // we are doing this so that we can access this objec in the form page
-    dispatch(updateRefEmployee(item));
+    dispatch(updateRefCustomer(item));
 
     // form page
-    history.push("/create-employee");
+    history.push("/create-customer");
   };
 
-  const getEmployeeById = (item) => {
-    dispatch(getByIdEmployeeAction(item));
+  const getCustomerById = (item) => {
+    dispatch(getByIdCustomerAction(item));
   };
 
   return (
@@ -46,7 +46,7 @@ export function EmployeeList() {
       <div className="row">
         <div className="col-3 col-md-2 d-none d-md-block"></div>
         <div className="col-12 col-md-8">
-          <h3 className="alert alert-secondary">Employee List</h3>
+          <h3 className="alert alert-secondary">Customer List</h3>
 
           {successOperation && (
             <div className="alert alert-success">Opeation Success</div>
@@ -64,7 +64,7 @@ export function EmployeeList() {
               </tr>
             </thead>
             <tbody>
-              {[...state.employee.list].map((item, index) => (
+              {[...state.customer.list].map((item, index) => (
                 <tr key={index}>
                   <th scope="row">{item.id}</th>
                   <td>{item.userName}</td>
@@ -74,14 +74,14 @@ export function EmployeeList() {
                   <td>
                     <input
                       type="button"
-                      onClick={() => getEmployeeById(item)}
+                      onClick={() => getCustomerById(item)}
                       value="Detail"
                       className="btn btn-link"
                     />
                     /
                     <input
                       type="button"
-                      onClick={() => updateEmployee(item)}
+                      onClick={() => updateCustomer(item)}
                       value="Edit"
                       className="btn btn-link"
                     />
@@ -89,7 +89,7 @@ export function EmployeeList() {
                     <input
                       type="button"
                       value="Delete"
-                      onClick={() => deleteEmployee(item, index)}
+                      onClick={() => deleteCustomer(item, index)}
                       className="btn btn-link text-danger"
                     />
                   </td>
@@ -101,8 +101,8 @@ export function EmployeeList() {
         <div className="col-3 col-md-2 d-none d-md-block"></div>
       </div>
 
-      {/** EMPLOYEE MODAL */}
-      <EmployeeModal />
+      {/** Customer MODAL */}
+      <CustomerModal />
     </>
   );
 }

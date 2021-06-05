@@ -10,11 +10,11 @@ export function AppNavBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link as={Link} to="/create-employee">
-            Create Employee
+          <Nav.Link as={Link} to="/create-customer">
+            Create Customer
           </Nav.Link>
-          <Nav.Link as={Link} to="/list-employee">
-            List Employee
+          <Nav.Link as={Link} to="/list-customer">
+            List Customer
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
