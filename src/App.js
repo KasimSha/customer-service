@@ -12,16 +12,16 @@ function App() {
       <AppNavBar />
 
       <Switch>
-        <Route path="/create-customer">
+        <Route path="/create-Customer">
           <CustomerUpsert />
         </Route>
 
-        <Route path="/list-customer">
+        <Route path="/list-Customer">
           <CustomerList />
         </Route>
 
         <Route exact path="/">
-          <CustomerList />
+          <CustomerUpsert />
         </Route>
       </Switch>
     </Router>

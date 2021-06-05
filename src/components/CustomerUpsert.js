@@ -18,6 +18,12 @@ export function CustomerUpsert() {
   const [password, setPassword] = useState(state.customer.refemp.password);
   const [email, setEmail] = useState(state.customer.refemp.email);
   const [mobile, setMobile] = useState(state.customer.refemp.mobile);
+  const [salary, setSalary] = useState(state.customer.refemp.salary);
+  const [address, setAddress] = useState(state.customer.refemp.address);
+  const [city, setCity] = useState(state.customer.refemp.city);
+  const [stateName, setStateName] = useState(state.customer.refemp.stateName);
+  const [pinCode, setPinCode] = useState(state.customer.refemp.pinCode);
+  const [age, setAge] = useState(state.customer.refemp.age);
 
   const [successOperation, setSuccessOperation] = useState(false);
   const [errorOperation, setErrorOperation] = useState(false);
@@ -28,10 +34,29 @@ export function CustomerUpsert() {
   const updatePassword = (e) => setPassword(e.target.value);
   const updateEmail = (e) => setEmail(e.target.value);
   const updateMobile = (e) => setMobile(e.target.value);
+  const updateSalary = (e) => setSalary(e.target.value);
+  const updateAddress = (e) => setAddress(e.target.value);
+  const updateCity = (e) => setCity(e.target.value);
+  const updateStateName = (e) => setStateName(e.target.value);
+  const updatePinCode = (e) => setPinCode(e.target.value);
+  const updateAge = (e) => setAge(e.target.value);
 
   const addCustomer = (e) => {
     e.preventDefault();
-    console.log(firstName, lastName, userName, password, email, mobile);
+    console.log(
+      firstName,
+      lastName,
+      userName,
+      password,
+      email,
+      mobile,
+      salary,
+      address,
+      city,
+      stateName,
+      pinCode,
+      age
+    );
 
     // THIS IS REDUX ACTION CALLING
     dispatch(
@@ -42,12 +67,18 @@ export function CustomerUpsert() {
         email,
         password,
         mobile,
+        salary,
+        address,
+        city,
+        stateName,
+        pinCode,
+        age,
       })
     );
 
     // A1 sucess
     setSuccessOperation(true);
-    setTimeout(() => setSuccessOperation(false), 5000);
+    setTimeout(() => setSuccessOperation(false), 2000);
 
     // A2: navigate to another page
     // history.push("/list-employee");
@@ -59,6 +90,12 @@ export function CustomerUpsert() {
     setPassword("");
     setEmail("");
     setMobile("");
+    setSalary("");
+    setAddress("");
+    setCity("");
+    setStateName("");
+    setPinCode("");
+    setAge("");
   };
 
   const updateCustomer = () => {
@@ -71,6 +108,12 @@ export function CustomerUpsert() {
         email,
         mobile,
         password,
+        salary,
+        address,
+        city,
+        stateName,
+        pinCode,
+        age,
       })
     );
 
@@ -81,6 +124,12 @@ export function CustomerUpsert() {
     setPassword("");
     setEmail("");
     setMobile("");
+    setSalary("");
+    setAddress("");
+    setCity("");
+    setStateName("");
+    setPinCode("");
+    setAge("");
   };
 
   return (
@@ -102,7 +151,7 @@ export function CustomerUpsert() {
             value={firstName}
             onChange={(e) => updateFirstName(e)}
             className="form-control"
-            placeholder="Enter First name"
+            placeholder="First name"
           />
         </div>
 
@@ -112,7 +161,7 @@ export function CustomerUpsert() {
             value={lastName}
             onChange={(e) => updateLastName(e)}
             className="form-control"
-            placeholder="Enter Lastname"
+            placeholder="Last name"
           />
         </div>
 
@@ -122,7 +171,7 @@ export function CustomerUpsert() {
             value={userName}
             onChange={(e) => updateUserName(e)}
             className="form-control"
-            placeholder="Enter Username"
+            placeholder="Username"
           />
         </div>
 
@@ -132,7 +181,7 @@ export function CustomerUpsert() {
             value={password}
             onChange={(e) => updatePassword(e)}
             className="form-control"
-            placeholder="Enter Password"
+            placeholder="Password"
           />
         </div>
 
@@ -142,7 +191,67 @@ export function CustomerUpsert() {
             value={email}
             onChange={(e) => updateEmail(e)}
             className="form-control"
-            placeholder="Enter Email"
+            placeholder="Email"
+          />
+        </div>
+
+        <div className="mb-1">
+          <input
+            type="text"
+            value={age}
+            onChange={(e) => updateAge(e)}
+            className="form-control"
+            placeholder="Age"
+          />
+        </div>
+
+        <div className="mb-1">
+          <input
+            type="text"
+            value={salary}
+            onChange={(e) => updateSalary(e)}
+            className="form-control"
+            placeholder="Salary"
+          />
+        </div>
+
+        <div className="mb-1">
+          <input
+            type="text"
+            value={address}
+            onChange={(e) => updateAddress(e)}
+            className="form-control"
+            placeholder="Address"
+          />
+        </div>
+
+        <div className="mb-1">
+          <input
+            type="text"
+            value={city}
+            onChange={(e) => updateCity(e)}
+            className="form-control"
+            placeholder="City"
+          />
+        </div>
+
+        <div className="mb-1">
+          <input
+            type="text"
+            value={stateName}
+            onChange={(e) => updateStateName(e)}
+            className="form-control"
+            placeholder="State"
+          />
+        </div>
+
+        <div className="mb-1">
+          <input
+            type="text"
+            value={pinCode}
+            onChange={(e) => updatePinCode(e)}
+            className="form-control"
+            placeholder="PinCode"
           />
         </div>
 
@@ -152,7 +261,7 @@ export function CustomerUpsert() {
             value={mobile}
             onChange={(e) => updateMobile(e)}
             className="form-control"
-            placeholder="Enter Mobile"
+            placeholder="Mobile"
           />
         </div>
 

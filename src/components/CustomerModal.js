@@ -31,6 +31,20 @@ export function CustomerModal() {
           <ListGroup.Item>
             Mobile - {state.customer.refemp.mobile}
           </ListGroup.Item>
+          <ListGroup.Item>
+            Salary - {state.customer.refemp.salary}
+          </ListGroup.Item>
+          <ListGroup.Item>
+            Address - {state.customer.refemp.address}
+          </ListGroup.Item>
+          <ListGroup.Item>City - {state.customer.refemp.city}</ListGroup.Item>
+          <ListGroup.Item>
+            State - {state.customer.refemp.stateName}
+          </ListGroup.Item>
+          <ListGroup.Item>
+            PinCode - {state.customer.refemp.pinCode}
+          </ListGroup.Item>
+          <ListGroup.Item>Age - {state.customer.refemp.age}</ListGroup.Item>
         </ListGroup>
       </Modal.Body>
       <Modal.Footer>

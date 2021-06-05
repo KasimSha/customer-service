@@ -21,8 +21,8 @@ export function createCustomerAction(payload) {
   // MAKE SURE redux-thunk is installed.
   return async (dispatch) => {
     // WE HV TO CALL THE SPRINT1 / SPRING BOOT
-    const url = "http://localhost:8080/api/customer/";
-    const requestBody = { ...payload, age: 30 };
+    const url = "http://localhost:8080/api/customer/create";
+    const requestBody = { ...payload };
 
     // HTTP Client
     await fetch(url, {
@@ -40,8 +40,8 @@ export function updateCustomerAction(payload) {
   // return { type: CUSTOMER_UPDATE, payload: payload };
   return async (dispatch) => {
     // WE HV TO CALL THE SPRINT1 / SPRING BOOT
-    const url = `http://localhost:8080/api/customer/${payload.id}`;
-    const requestBody = { ...payload, age: 25 };
+    const url = `http://localhost:8080/api/customer/update/${payload.id}`;
+    const requestBody = { ...payload };
 
     await fetch(url, {
       method: "PUT",
@@ -59,7 +59,7 @@ export function deleteCustomerAction(payload) {
 
   // redux thunk
   return async (dispatch) => {
-    const url = `http://localhost:8080/api/customer/${payload.id}`;
+    const url = `http://localhost:8080/api/customer/delete/${payload.id}`;
     await fetch(url, { method: "DELETE" });
 
     // update the ui.
@@ -73,7 +73,7 @@ export function getAllCustomerAction(payload) {
   // API CALL/BACKEND CALL / REDUX-THUNK IS THERE
   return async (dispatch) => {
     // WE HV TO CALL THE SPRINT1 / SPRING BOOT
-    const url = "http://localhost:8080/api/customer/";
+    const url = "http://localhost:8080/api/customer/findall";
 
     // HTTP Client / POSTMAN / SWAGGER
     const response = await fetch(url);
@@ -88,7 +88,7 @@ export function getAllCustomerAction(payload) {
 export function getByIdCustomerAction(payload) {
   // return { type: CUSTOMER_GET_BY_ID, payload: payload };
   return async (dispatch) => {
-    const url = `http://localhost:8080/api/customer/${payload.id}`;
+    const url = `http://localhost:8080/api/customer/find/${payload.id}`;
     const response = await fetch(url);
     const customerObj = await response.json();
 
