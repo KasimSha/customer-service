@@ -60,7 +60,7 @@ export function CustomerList() {
                 <th scope="col">PASSWORD</th>
                 <th scope="col">EMAIL</th>
                 <th scope="col">MOBILE</th>
-                <th scope="col">Actions</th>
+                <th scope="col">ACTIONS</th>
               </tr>
             </thead>
             <tbody>
@@ -68,8 +68,8 @@ export function CustomerList() {
                 <tr key={index}>
                   <th scope="row">{item.id}</th>
                   <td>{item.userName}</td>
-                  <td>{"********"}</td>
-                  <td>{"****@gmail.com"}</td>
+                  <td>{item.password}</td>
+                  <td>{item.email}</td>
                   <td>{item.mobile}</td>
                   <td>
                     <input
@@ -101,7 +101,7 @@ export function CustomerList() {
         <div className="col-3 col-md-2 d-none d-md-block"></div>
       </div>
 
-      {/** Customer MODAL */}
+      {/** EMPLOYEE MODAL */}
       <CustomerModal />
     </>
   );
