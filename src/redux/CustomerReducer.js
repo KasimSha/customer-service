@@ -2,7 +2,6 @@ const initState = {
   list: [],
 
   refemp: {},
-  sampleList: ["Delhi", "Kolkata", "Chennai", "Mumbai"],
 };
 
 // ACTION TYPES
@@ -62,37 +61,28 @@ export function deleteCustomerAction(payload) {
     const url = `http://localhost:8080/api/customer/delete/${payload.id}`;
     await fetch(url, { method: "DELETE" });
 
-    // update the ui.
     dispatch(getAllCustomerAction());
   };
 }
 
 export function getAllCustomerAction(payload) {
-  // return { type: CUSTOMER_GET_ALL, payload: payload };
-
-  // API CALL/BACKEND CALL / REDUX-THUNK IS THERE
   return async (dispatch) => {
-    // WE HV TO CALL THE SPRINT1 / SPRING BOOT
     const url = "http://localhost:8080/api/customer/findall";
 
-    // HTTP Client / POSTMAN / SWAGGER
     const response = await fetch(url);
     const customerList = await response.json();
     console.log(customerList);
 
-    // Update the UI
     dispatch({ type: CUSTOMER_GET_ALL, payload: customerList });
   };
 }
 
 export function getByIdCustomerAction(payload) {
-  // return { type: CUSTOMER_GET_BY_ID, payload: payload };
   return async (dispatch) => {
     const url = `http://localhost:8080/api/customer/find/${payload.id}`;
     const response = await fetch(url);
     const customerObj = await response.json();
 
-    // this wil update the refemp
     dispatch(updateRefCustomer(customerObj));
   };
 }

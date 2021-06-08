@@ -9,7 +9,9 @@ import { AppNavBar } from "./common/AppNavBar";
 function App() {
   return (
     <Router>
-      <AppNavBar />
+      <div className="sticky-top">
+        <AppNavBar />
+      </div>
 
       <Switch>
         <Route path="/create-Customer">

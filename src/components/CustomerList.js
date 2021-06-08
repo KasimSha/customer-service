@@ -17,7 +17,6 @@ export function CustomerList() {
 
   const [successOperation, setSuccessOperation] = useState(false);
 
-  // Used to Initialize :: READ THE DATA FROM API
   useEffect(() => {
     dispatch(getAllCustomerAction());
   }, []);
@@ -30,10 +29,8 @@ export function CustomerList() {
   };
 
   const updateCustomer = (item) => {
-    // we are doing this so that we can access this objec in the form page
     dispatch(updateRefCustomer(item));
 
-    // form page
     history.push("/create-customer");
   };
 
@@ -43,27 +40,30 @@ export function CustomerList() {
 
   return (
     <>
-      <div className="row">
+      <div className="row alert alert-secondary">
         <div className="col-3 col-md-2 d-none d-md-block"></div>
         <div className="col-12 col-md-8">
-          <h3 className="alert alert-secondary">Customer List</h3>
+          <h3 className="text-center alert bg-primary text-dark">
+            Customer List
+          </h3>
 
           {successOperation && (
             <div className="alert alert-success">Opeation Success</div>
           )}
 
           <table className="table">
-            <thead className="thead-dark">
+            <thead className=" alert bg-warning">
               <tr>
                 <th scope="col">#ID</th>
                 <th scope="col">USERNAME</th>
                 <th scope="col">PASSWORD</th>
                 <th scope="col">EMAIL</th>
                 <th scope="col">MOBILE</th>
+                <th scope="col">GENDER</th>
                 <th scope="col">ACTIONS</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="alert bg-dark text-light">
               {[...state.customer.list].map((item, index) => (
                 <tr key={index}>
                   <th scope="row">{item.id}</th>
@@ -71,6 +71,7 @@ export function CustomerList() {
                   <td>{item.password}</td>
                   <td>{item.email}</td>
                   <td>{item.mobile}</td>
+                  <td>{item.gender}</td>
                   <td>
                     <input
                       type="button"
@@ -101,7 +102,6 @@ export function CustomerList() {
         <div className="col-3 col-md-2 d-none d-md-block"></div>
       </div>
 
-      {/** EMPLOYEE MODAL */}
       <CustomerModal />
     </>
   );

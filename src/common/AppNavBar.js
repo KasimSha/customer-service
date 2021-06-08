@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 export function AppNavBar() {
   return (
-    <Navbar bg="dark" expand="lg" variant="dark">
-      <Navbar.Brand as={Link} to="/">
+    <Navbar bg="warning" expand="lg" variant="dark">
+      <Navbar.Brand as={Link} to="/" className="text-dark mb-2">
         Home
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
-          <Nav.Link as={Link} to="/create-Customer">
+          <Nav.Link as={Link} to="/create-Customer" className="text-dark ">
             Create Customer
           </Nav.Link>
-          <Nav.Link as={Link} to="/list-Customer">
+          <Nav.Link as={Link} to="/list-Customer" className="text-dark ">
             Customer List
           </Nav.Link>
         </Nav>
