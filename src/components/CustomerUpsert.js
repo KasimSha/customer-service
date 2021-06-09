@@ -377,7 +377,7 @@ export function CustomerUpsert() {
               <input
                 type="button"
                 className="  alert text-white f-2 w-100"
-                style={{ backgroundColor: "lightblue", color: "black" }}
+                style={{ backgroundColor: "blue" }}
                 value="Update Profile"
                 onClick={() => updateCustomer()}
               />
