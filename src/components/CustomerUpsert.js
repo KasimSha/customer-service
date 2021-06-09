@@ -74,19 +74,28 @@ export function CustomerUpsert() {
       // you can write custom valiadation logic here.
       // username :: Speical Character validation
       const re = /^[a-zA-Z0-9\.]+$/;
+      const re1 = /^[a-zA-Z\.]+$/;
+      const re2 = /^[a-zA-Z0-9\.]+$/;
       if (!re.test(userName)) {
         alert("Username should not contain Special Character");
         return;
       }
-      if (!re.test(firstName)) {
+      if (!re1.test(firstName)) {
         alert("Username should not contain Special Character");
         return;
       }
 
-      if (!re.test(lastName)) {
+      if (!re1.test(lastName)) {
         alert("Username should not contain Special Character");
         return;
       }
+
+      // if (!re1.test(password)) {
+      //   alert(
+      //     "Password Should Contain Atleast One lowercase, one Uppercase one number and one special character"
+      //   );
+      //   return;
+      // }
 
       if (age <= 18) {
         alert("Your are under Age");
@@ -343,7 +352,7 @@ export function CustomerUpsert() {
                 style={{ backgroundColor: "lightblue", color: "black" }}
                 placeholder="PinCode"
                 max="999999"
-                min="999999"
+                min="000000"
                 required
               />
             </div>
@@ -357,7 +366,7 @@ export function CustomerUpsert() {
                 style={{ backgroundColor: "lightblue", color: "black" }}
                 placeholder="Mobile"
                 max="9999999999"
-                min="9999999999"
+                min="0000000000"
                 required
               />
             </div>
