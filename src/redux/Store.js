@@ -5,10 +5,12 @@ import thunk from "redux-thunk";
 
 import { CustomerReducer } from "./CustomerReducer";
 import { PolicyReducer } from "./PolicyReducer";
+import { PaymentReducer } from "./PaymentReducer";
 
 const rootReducer = combineReducers({
   customer: CustomerReducer,
   policy: PolicyReducer,
+  payment: PaymentReducer,
   // depart : DepartRducer,
   //vechil: VechuileReucer
 });

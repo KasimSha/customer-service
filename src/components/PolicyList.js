@@ -7,6 +7,7 @@ import {
   getByIdPolicyAction,
   updateRefPolicy,
 } from "../redux/PolicyReducer";
+import { PaymentUpsert } from "./PaymentUpsert";
 import { PolicyModal } from "./PolicyModal";
 
 export function PolicyList() {
@@ -69,7 +70,7 @@ export function PolicyList() {
                     <input
                       type="button"
                       onClick={() => getPolicyById(item)}
-                      value="Detail"
+                      value="Buy"
                       className="btn btn-link"
                     />
                     /

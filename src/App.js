@@ -7,6 +7,7 @@ import { PolicyUpsert } from "./components/PolicyUpsert";
 import { PolicyList } from "./components/PolicyList";
 import { Nav, Navbar } from "react-bootstrap";
 import { AppNavBar } from "./common/AppNavBar";
+import { PaymentUpsert } from "./components/PaymentUpsert";
 
 function App() {
   return (
@@ -16,21 +17,27 @@ function App() {
       </div>
 
       <Switch>
-        <Route path="/create-policy">
-          <PolicyUpsert />
-        </Route>
-
-        <Route path="/customer-list">
-          <CustomerList />
+        <Route path="/New-customer">
+          <CustomerUpsert />
         </Route>
 
         <Route path="/policy-list">
           <PolicyList />
         </Route>
 
-        <Route exact path="/">
-          <PolicyList />
+        <Route path="/customer-list">
+          <CustomerList />
         </Route>
+
+        <Route path="/payments">
+          <PaymentUpsert />
+        </Route>
+
+        <div className="d-flex row text-center justify-content-center">
+          <Route exact path="/">
+            WELCOME TO ONLINE TERM INSURACE
+          </Route>
+        </div>
       </Switch>
     </Router>
   );
