@@ -81,25 +81,21 @@ export function CustomerUpsert() {
         return;
       }
       if (!re1.test(firstName)) {
-        alert(
-          "First Letter Must be Capital and no special Chararters are allowed"
-        );
+        alert("Username should not contain Special Character");
         return;
       }
 
       if (!re1.test(lastName)) {
-        alert(
-          "First Letter Must be Capital and no special Chararters are allowed"
-        );
+        alert("Username should not contain Special Character");
         return;
       }
 
-      if (!re1.test(lastName)) {
-        alert(
-          "First Letter Must be Capital and no special Chararters are allowed"
-        );
-        return;
-      }
+      // if (!re1.test(password)) {
+      //   alert(
+      //     "Password Should Contain Atleast One lowercase, one Uppercase one number and one special character"
+      //   );
+      //   return;
+      // }
 
       if (age <= 18) {
         alert("Your are under Age");
@@ -381,7 +377,7 @@ export function CustomerUpsert() {
               <input
                 type="button"
                 className="  alert text-white f-2 w-100"
-                style={{ backgroundColor: "lightblue", color: "black" }}
+                style={{ backgroundColor: "blue" }}
                 value="Update Profile"
                 onClick={() => updateCustomer()}
               />
