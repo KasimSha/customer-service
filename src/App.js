@@ -17,16 +17,16 @@ function App() {
       </div>
 
       <Switch>
-        <Route path="/New-customer">
+        <Route path="/create-Customer">
           <CustomerUpsert />
+        </Route>
+
+        <Route path="/Customer-list">
+          <CustomerList />
         </Route>
 
         <Route path="/policy-list">
           <PolicyList />
-        </Route>
-
-        <Route path="/customer-list">
-          <CustomerList />
         </Route>
 
         <Route path="/payments">

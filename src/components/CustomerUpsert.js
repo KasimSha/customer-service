@@ -356,7 +356,7 @@ export function CustomerUpsert() {
                 style={{ backgroundColor: "lightblue", color: "black" }}
                 placeholder="PinCode"
                 max="999999"
-                min="999999"
+                min="000000"
                 required
               />
             </div>
@@ -370,7 +370,7 @@ export function CustomerUpsert() {
                 style={{ backgroundColor: "lightblue", color: "black" }}
                 placeholder="Mobile"
                 max="9999999999"
-                min="9999999999"
+                min="0000000000"
                 required
               />
             </div>
