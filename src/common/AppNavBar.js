@@ -10,10 +10,14 @@ export function AppNavBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
-          <Nav.Link as={Link} to="/create-Customer" className="text-dark ">
-            Create Customer
+          <Nav.Link as={Link} to="/create-policy" className="text-dark ">
+            Create New Policy
           </Nav.Link>
-          <Nav.Link as={Link} to="/list-Customer" className="text-dark ">
+          <Nav.Link as={Link} to="/policy-list" className="text-dark ">
+            Policy List
+          </Nav.Link>
+
+          <Nav.Link as={Link} to="/customer-list" className="text-dark ">
             Customer List
           </Nav.Link>
         </Nav>

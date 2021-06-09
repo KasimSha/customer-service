@@ -79,20 +79,20 @@ export function CustomerList() {
                       value="Detail"
                       className="btn btn-link"
                     />
-                    /
+                    {/* /
                     <input
                       type="button"
                       onClick={() => updateCustomer(item)}
                       value="Edit"
                       className="btn btn-link"
-                    />
-                    /
+                    /> */}
+                    {/* /
                     <input
                       type="button"
                       value="Delete"
                       onClick={() => deleteCustomer(item, index)}
                       className="btn btn-link text-danger"
-                    />
+                    /> */}
                   </td>
                 </tr>
               ))}
