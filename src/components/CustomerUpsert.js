@@ -73,9 +73,27 @@ export function CustomerUpsert() {
     } else {
       // you can write custom valiadation logic here.
       // username :: Speical Character validation
-      const re = /^[a-z0-9_\.]+$/;
+      const re = /^[a-zA-Z0-9\.]+$/;
       if (!re.test(userName)) {
         alert("Username should not contain Special Character");
+        return;
+      }
+      if (!re.test(firstName)) {
+        alert("Username should not contain Special Character");
+        return;
+      }
+
+      if (!re.test(lastName)) {
+        alert("Username should not contain Special Character");
+        return;
+      }
+
+      if (age <= 18) {
+        alert("Your are under Age");
+        return;
+      }
+      if (age >= 60) {
+        alert("Your are above Age");
         return;
       }
 
@@ -242,7 +260,7 @@ export function CustomerUpsert() {
           <div className="row">
             <div className="mb-4 col-6">
               <input
-                type="text"
+                type="number"
                 value={age}
                 onChange={(e) => updateAge(e)}
                 className="form-control "
@@ -267,7 +285,7 @@ export function CustomerUpsert() {
 
           <div className="mb-4">
             <input
-              type="text"
+              type="number"
               value={salary}
               onChange={(e) => updateSalary(e)}
               className="form-control "
@@ -318,12 +336,14 @@ export function CustomerUpsert() {
           <div className="row">
             <div className="mb-4 col-6">
               <input
-                type="text"
+                type="number"
                 value={pinCode}
                 onChange={(e) => updatePinCode(e)}
                 className="form-control "
                 style={{ backgroundColor: "lightblue", color: "black" }}
                 placeholder="PinCode"
+                max="999999"
+                min="999999"
                 required
               />
             </div>
@@ -333,10 +353,11 @@ export function CustomerUpsert() {
                 type="number"
                 value={mobile}
                 onChange={(e) => updateMobile(e)}
-                className="form-control "
+                className="form-control"
                 style={{ backgroundColor: "lightblue", color: "black" }}
                 placeholder="Mobile"
                 max="9999999999"
+                min="9999999999"
                 required
               />
             </div>
