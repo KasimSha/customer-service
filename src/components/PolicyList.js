@@ -70,7 +70,7 @@ export function PolicyList() {
                     <input
                       type="button"
                       onClick={() => getPolicyById(item)}
-                      value="Buy"
+                      value="Details"
                       className="btn btn-link"
                     />
                     /

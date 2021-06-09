@@ -74,17 +74,30 @@ export function CustomerUpsert() {
       // you can write custom valiadation logic here.
       // username :: Speical Character validation
       const re = /^[a-zA-Z0-9\.]+$/;
+      const re1 = /^[a-zA-Z\.]+$/;
+      const re2 = /^[a-zA-Z0-9\.]+$/;
       if (!re.test(userName)) {
         alert("Username should not contain Special Character");
         return;
       }
-      if (!re.test(firstName)) {
-        alert("Username should not contain Special Character");
+      if (!re1.test(firstName)) {
+        alert(
+          "First Letter Must be Capital and no special Chararters are allowed"
+        );
         return;
       }
 
-      if (!re.test(lastName)) {
-        alert("Username should not contain Special Character");
+      if (!re1.test(lastName)) {
+        alert(
+          "First Letter Must be Capital and no special Chararters are allowed"
+        );
+        return;
+      }
+
+      if (!re1.test(lastName)) {
+        alert(
+          "First Letter Must be Capital and no special Chararters are allowed"
+        );
         return;
       }
 
