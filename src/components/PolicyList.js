@@ -58,6 +58,7 @@ export function PolicyList() {
               <tr>
                 <th scope="col">#ID</th>
                 <th scope="col">NAME</th>
+                <th scope="col">DESCRIPTION</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
@@ -66,6 +67,7 @@ export function PolicyList() {
                 <tr key={index}>
                   <th scope="row">{item.id}</th>
                   <td>{item.policyName}</td>
+                  <td>{item.description}</td>
                   <td>
                     <input
                       type="button"
@@ -96,7 +98,6 @@ export function PolicyList() {
         <div className="col-3 col-md-2 d-none d-md-block"></div>
       </div>
 
-      {/** POLICY MODAL */}
       <PolicyModal />
     </>
   );
