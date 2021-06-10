@@ -14,22 +14,34 @@ export function PaymentUpsert() {
 
   const [amount, setAmount] = useState(state.payment.refemp.amount);
   const [date, setDate] = useState(state.payment.refemp.date);
+  const [accountNum, setAccountNum] = useState(state.payment.refemp.accountNum);
+  const [bankName, setBankName] = useState(state.payment.refemp.bankName);
+  const [ifscCode, setIfscCode] = useState(state.payment.refemp.ifscCode);
+  const [policyId, setPolicyId] = useState(state.payment.refemp.policyId);
 
   const [successOperation, setSuccessOperation] = useState(false);
   const [errorOperation, setErrorOperation] = useState(false);
 
   const updateAmount = (e) => setAmount(e.target.value);
   const updateDate = (e) => setDate(e.target.value);
+  const updateBankName = (e) => setBankName(e.target.value);
+  const updateAccountNum = (e) => setAccountNum(e.target.value);
+  const updateIfscCode = (e) => setIfscCode(e.target.value);
+  const updatePolicyId = (e) => setPolicyId(e.target.value);
 
   const PaymentDone = (e) => {
     e.preventDefault();
-    console.log(amount, date);
+    console.log(amount, date, accountNum, bankName, ifscCode, policyId);
 
     // THIS IS REDUX ACTION CALLING
     dispatch(
       paymentDoneAction({
         amount,
         date,
+        accountNum,
+        bankName,
+        ifscCode,
+        policyId,
       })
     );
 
@@ -43,6 +55,10 @@ export function PaymentUpsert() {
     // reset the form
     setAmount("");
     setDate("");
+    setAccountNum("");
+    setBankName("");
+    setIfscCode("");
+    setPolicyId("");
   };
 
   const updatePayment = () => {
@@ -51,12 +67,20 @@ export function PaymentUpsert() {
         id: state.payment.refemp.id,
         amount,
         date,
+        accountNum,
+        bankName,
+        ifscCode,
+        policyId,
       })
     );
 
     // reset the form
     setAmount("");
     setDate("");
+    setAccountNum("");
+    setBankName("");
+    setIfscCode("");
+    setPolicyId("");
   };
 
   return (
@@ -92,15 +116,45 @@ export function PaymentUpsert() {
           />
         </div>
 
-        {/* <div className="mb-1">
+        <div className="mb-1">
           <input
             type="text"
-            value={receiptNum}
-            onChange={(e) => updateReceiptNum(e)}
+            value={accountNum}
+            onChange={(e) => updateAccountNum(e)}
             className="form-control"
-            placeholder="Enter ReceiptNum"
+            placeholder="Enter Account Number"
           />
-        </div> */}
+        </div>
+
+        <div className="mb-1">
+          <input
+            type="text"
+            value={bankName}
+            onChange={(e) => updateBankName(e)}
+            className="form-control"
+            placeholder="Enter Bank Name"
+          />
+        </div>
+
+        <div className="mb-1">
+          <input
+            type="text"
+            value={ifscCode}
+            onChange={(e) => updateIfscCode(e)}
+            className="form-control"
+            placeholder="Enter IFSC Code"
+          />
+        </div>
+
+        <div className="mb-1">
+          <input
+            type="text"
+            value={policyId}
+            onChange={(e) => updatePolicyId(e)}
+            className="form-control"
+            placeholder="Enter Policy Id"
+          />
+        </div>
 
         <div className="mb-1">
           {state.payment.refemp.id ? (

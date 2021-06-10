@@ -18,13 +18,29 @@ export function PaymentModal() {
       <Modal.Body>
         <ListGroup>
           <ListGroup.Item>Amount- {state.payment.refemp.amount}</ListGroup.Item>
+        </ListGroup>
+        <ListGroup>
           <ListGroup.Item>Date - {state.payment.refemp.date}</ListGroup.Item>
-
-          {/* <ListGroup.Item>Password - {"*********"}</ListGroup.Item>
-          <ListGroup.Item>Email - {"******@gmail.com"}</ListGroup.Item>
+        </ListGroup>
+        <ListGroup>
           <ListGroup.Item>
-            Mobile - {state.payment.refemp.mobile}
-          </ListGroup.Item> */}
+            Bank Name- {state.payment.refemp.amount}
+          </ListGroup.Item>
+        </ListGroup>
+        <ListGroup>
+          <ListGroup.Item>
+            Account Number- {state.payment.refemp.amount}
+          </ListGroup.Item>
+        </ListGroup>
+        <ListGroup>
+          <ListGroup.Item>
+            IFSC Code- {state.payment.refemp.amount}
+          </ListGroup.Item>
+        </ListGroup>
+        <ListGroup>
+          <ListGroup.Item>
+            Policy Id- {state.payment.refemp.amount}
+          </ListGroup.Item>
         </ListGroup>
       </Modal.Body>
       <Modal.Footer>

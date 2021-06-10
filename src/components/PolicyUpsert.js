@@ -11,11 +11,15 @@ export function PolicyUpsert() {
   console.log(state);
 
   const [policyName, setPolicyName] = useState(state.policy.refemp.policyName);
+  const [description, setDescription] = useState(
+    state.policy.refemp.description
+  );
 
   const [successOperation, setSuccessOperation] = useState(false);
   const [errorOperation, setErrorOperation] = useState(false);
 
   const updatePolicyName = (e) => setPolicyName(e.target.value);
+  const updateDescription = (e) => setDescription(e.target.value);
 
   const addPolicy = (e) => {
     e.preventDefault();
@@ -39,6 +43,7 @@ export function PolicyUpsert() {
     dispatch(
       createPolicyAction({
         policyName,
+        description,
       })
     );
 
@@ -51,6 +56,7 @@ export function PolicyUpsert() {
 
     // reset the form
     setPolicyName("");
+    setDescription("");
   };
 
   const updatePolicy = () => {
@@ -58,11 +64,13 @@ export function PolicyUpsert() {
       updatePolicyAction({
         id: state.policy.refemp.id,
         policyName,
+        description,
       })
     );
 
     // reset the form
     setPolicyName("");
+    setDescription("");
   };
 
   return (
@@ -86,6 +94,16 @@ export function PolicyUpsert() {
               onChange={(e) => updatePolicyName(e)}
               className="form-control"
               placeholder="Enter policy name"
+            />
+          </div>
+
+          <div className="mb-1">
+            <input
+              type="text"
+              value={description}
+              onChange={(e) => updateDescription(e)}
+              className="form-control"
+              placeholder="Enter Description"
             />
           </div>
 
