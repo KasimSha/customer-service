@@ -19,7 +19,7 @@ export function PaymentUpsert() {
   const [expiredDate, setExpiredDate] = useState(
     state.payment.refemp.expiredDate
   );
-  //const [policyId, setPolicyId] = useState(state.payment.refemp.policyId);
+  const [policyId, setPolicyId] = useState(state.payment.refemp.policyId);
 
   const [successOperation, setSuccessOperation] = useState(false);
   const [errorOperation, setErrorOperation] = useState(false);
@@ -29,11 +29,11 @@ export function PaymentUpsert() {
   const updateCvv = (e) => setCvv(e.target.value);
   const updateCardNumber = (e) => setCardNumber(e.target.value);
   const updateExpiredDate = (e) => setExpiredDate(e.target.value);
-  //const updatePolicyId = (e) => setPolicyId(e.target.value);
+  const updatePolicyId = (e) => setPolicyId(e.target.value);
 
   const PaymentDone = (e) => {
     e.preventDefault();
-    console.log(amount, date, cvv, cardNumber, expiredDate);
+    console.log(amount, date, cvv, cardNumber, expiredDate, policyId);
 
     // THIS IS REDUX ACTION CALLING
     dispatch(
@@ -43,6 +43,7 @@ export function PaymentUpsert() {
         cvv,
         cardNumber,
         expiredDate,
+        policyId,
       })
     );
 
@@ -59,7 +60,7 @@ export function PaymentUpsert() {
     setCvv("");
     setCardNumber("");
     setExpiredDate("");
-    // setPolicyId("");
+    setPolicyId("");
   };
 
   const updatePayment = () => {
@@ -71,6 +72,7 @@ export function PaymentUpsert() {
         cvv,
         cardNumber,
         expiredDate,
+        policyId,
       })
     );
 
@@ -80,7 +82,7 @@ export function PaymentUpsert() {
     setCvv("");
     setCardNumber("");
     setExpiredDate("");
-    // setPolicyId("");
+    setPolicyId("");
   };
 
   return (
@@ -116,7 +118,7 @@ export function PaymentUpsert() {
           />
         </div>
 
-        {/* <div className="mb-1">
+        <div className="mb-1">
           <input
             type="number"
             value={policyId}
@@ -124,7 +126,7 @@ export function PaymentUpsert() {
             className="form-control"
             placeholder="Enter Policy Id"
           />
-        </div> */}
+        </div>
         <label htmlFor="">Enter Card Details</label>
         <div className="mb-1">
           <input
