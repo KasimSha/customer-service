@@ -224,17 +224,17 @@ export function CustomerUpsert() {
   return (
     <div
       className="row "
+      style={{ backgroundColor: "#d9ecd0", height: "120vh" }}
       // style={{
       //   backgroundImage: `url(${background}) `,
       // }}
     >
       <div className="col-3 col-md-3 d-none d-md-block"></div>
       <div className="col-12 col-md-6">
-        <h3 className=" text-center  alert bg-success text-black mt-2">
+        <h3 className=" text-center alert alert-primary  text-black mt-2">
           {state.customer.refemp.id ? "Update Profile" : "New Customer"}
         </h3>
 
-        {/** BELOW THESE TWO TAGS MUST BE CONDITIOANL */}
         {successOperation && (
           <div className="alert alert-success">Opeation Success</div>
         )}
@@ -247,7 +247,7 @@ export function CustomerUpsert() {
                 value={firstName}
                 onChange={(e) => updateFirstName(e)}
                 className="form-control "
-                style={{ backgroundColor: "lightblue", color: "black" }}
+                style={{ color: "black" }}
                 placeholder="First name"
                 required
               />
@@ -259,7 +259,7 @@ export function CustomerUpsert() {
                 value={lastName}
                 onChange={(e) => updateLastName(e)}
                 className="form-control "
-                style={{ backgroundColor: "lightblue", color: "black" }}
+                style={{ color: "black" }}
                 placeholder="Last name"
                 required
               />
@@ -272,7 +272,7 @@ export function CustomerUpsert() {
               value={userName}
               onChange={(e) => updateUserName(e)}
               className="form-control "
-              style={{ backgroundColor: "lightblue", color: "black" }}
+              style={{ color: "black" }}
               placeholder="Username"
               required
             />
@@ -412,16 +412,16 @@ export function CustomerUpsert() {
             {state.customer.refemp.id ? (
               <input
                 type="button"
-                className="  alert text-white f-2 w-100"
-                style={{ backgroundColor: "blue" }}
+                className="  alert text-black f-2 w-100 bg-warning"
+                // style={{ backgroundColor: "blue" }}
                 value="Update Profile"
                 onClick={() => updateCustomer()}
               />
             ) : (
               <input
                 type="button"
-                className=" alert text-white f-2 w-100"
-                style={{ backgroundColor: "blue" }}
+                className=" alert text-black f-2 w-100 bg-warning"
+                // style={{ backgroundColor: "blue" }}
                 value="Register"
                 onClick={(e) => addCustomer(e)}
               />

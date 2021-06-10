@@ -14,34 +14,35 @@ export function PaymentUpsert() {
 
   const [amount, setAmount] = useState(state.payment.refemp.amount);
   const [date, setDate] = useState(state.payment.refemp.date);
-  const [accountNum, setAccountNum] = useState(state.payment.refemp.accountNum);
-  const [bankName, setBankName] = useState(state.payment.refemp.bankName);
-  const [ifscCode, setIfscCode] = useState(state.payment.refemp.ifscCode);
-  const [policyId, setPolicyId] = useState(state.payment.refemp.policyId);
+  const [cvv, setCvv] = useState(state.payment.refemp.cvv);
+  const [cardNumber, setCardNumber] = useState(state.payment.refemp.cardNumber);
+  const [expiredDate, setExpiredDate] = useState(
+    state.payment.refemp.expiredDate
+  );
+  //const [policyId, setPolicyId] = useState(state.payment.refemp.policyId);
 
   const [successOperation, setSuccessOperation] = useState(false);
   const [errorOperation, setErrorOperation] = useState(false);
 
   const updateAmount = (e) => setAmount(e.target.value);
   const updateDate = (e) => setDate(e.target.value);
-  const updateBankName = (e) => setBankName(e.target.value);
-  const updateAccountNum = (e) => setAccountNum(e.target.value);
-  const updateIfscCode = (e) => setIfscCode(e.target.value);
-  const updatePolicyId = (e) => setPolicyId(e.target.value);
+  const updateCvv = (e) => setCvv(e.target.value);
+  const updateCardNumber = (e) => setCardNumber(e.target.value);
+  const updateExpiredDate = (e) => setExpiredDate(e.target.value);
+  //const updatePolicyId = (e) => setPolicyId(e.target.value);
 
   const PaymentDone = (e) => {
     e.preventDefault();
-    console.log(amount, date, accountNum, bankName, ifscCode, policyId);
+    console.log(amount, date, cvv, cardNumber, expiredDate);
 
     // THIS IS REDUX ACTION CALLING
     dispatch(
       paymentDoneAction({
         amount,
         date,
-        accountNum,
-        bankName,
-        ifscCode,
-        policyId,
+        cvv,
+        cardNumber,
+        expiredDate,
       })
     );
 
@@ -55,10 +56,10 @@ export function PaymentUpsert() {
     // reset the form
     setAmount("");
     setDate("");
-    setAccountNum("");
-    setBankName("");
-    setIfscCode("");
-    setPolicyId("");
+    setCvv("");
+    setCardNumber("");
+    setExpiredDate("");
+    // setPolicyId("");
   };
 
   const updatePayment = () => {
@@ -67,20 +68,19 @@ export function PaymentUpsert() {
         id: state.payment.refemp.id,
         amount,
         date,
-        accountNum,
-        bankName,
-        ifscCode,
-        policyId,
+        cvv,
+        cardNumber,
+        expiredDate,
       })
     );
 
     // reset the form
     setAmount("");
     setDate("");
-    setAccountNum("");
-    setBankName("");
-    setIfscCode("");
-    setPolicyId("");
+    setCvv("");
+    setCardNumber("");
+    setExpiredDate("");
+    // setPolicyId("");
   };
 
   return (
@@ -108,7 +108,7 @@ export function PaymentUpsert() {
 
         <div className="mb-1">
           <input
-            type="text"
+            type="date"
             value={date}
             onChange={(e) => updateDate(e)}
             className="form-control"
@@ -116,43 +116,43 @@ export function PaymentUpsert() {
           />
         </div>
 
-        <div className="mb-1">
+        {/* <div className="mb-1">
           <input
-            type="text"
-            value={accountNum}
-            onChange={(e) => updateAccountNum(e)}
-            className="form-control"
-            placeholder="Enter Account Number"
-          />
-        </div>
-
-        <div className="mb-1">
-          <input
-            type="text"
-            value={bankName}
-            onChange={(e) => updateBankName(e)}
-            className="form-control"
-            placeholder="Enter Bank Name"
-          />
-        </div>
-
-        <div className="mb-1">
-          <input
-            type="text"
-            value={ifscCode}
-            onChange={(e) => updateIfscCode(e)}
-            className="form-control"
-            placeholder="Enter IFSC Code"
-          />
-        </div>
-
-        <div className="mb-1">
-          <input
-            type="text"
+            type="number"
             value={policyId}
             onChange={(e) => updatePolicyId(e)}
             className="form-control"
             placeholder="Enter Policy Id"
+          />
+        </div> */}
+        <label htmlFor="">Enter Card Details</label>
+        <div className="mb-1">
+          <input
+            type="text"
+            value={cardNumber}
+            onChange={(e) => updateCardNumber(e)}
+            className="form-control"
+            placeholder="Enter Card Number"
+          />
+        </div>
+
+        <div className="mb-1">
+          <input
+            type="text"
+            value={cvv}
+            onChange={(e) => updateCvv(e)}
+            className="form-control"
+            placeholder="Enter CVV"
+          />
+        </div>
+
+        <div className="mb-1">
+          <input
+            type="text"
+            value={expiredDate}
+            onChange={(e) => updateExpiredDate(e)}
+            className="form-control"
+            placeholder="Enter Expired Date"
           />
         </div>
 

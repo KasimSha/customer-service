@@ -60,6 +60,7 @@ export function PaymentList() {
               <th scope="col">#ID</th>
               <th scope="col">AMOUNT</th>
               <th scope="col">DATE</th>
+              {/* <th scope="col">PolicyId</th> */}
               <th scope="col">ACTIONS</th>
             </tr>
 
@@ -70,6 +71,7 @@ export function PaymentList() {
                   <th scope="row">{item.id}</th>
                   <td>{item.amount}</td>
                   <td>{item.date}</td>
+                  {/* <td>{item.policyId}</td> */}
                   <td>
                     <input
                       type="button"
@@ -77,13 +79,13 @@ export function PaymentList() {
                       value="Detail"
                       className="btn btn-link"
                     />
-                    /
+                    {/* /
                     <input
                       type="button"
                       onClick={() => updatePayment(item)}
                       value="Edit"
                       className="btn btn-link"
-                    />
+                    /> */}
                     {/* /
                     <input
                       type="button"

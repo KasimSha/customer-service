@@ -8,7 +8,8 @@ import { PolicyList } from "./components/PolicyList";
 import { Nav, Navbar } from "react-bootstrap";
 import { AppNavBar } from "./common/AppNavBar";
 import { PaymentUpsert } from "./components/PaymentUpsert";
-import background from "./images/insurance1.jpg";
+import { PaymentList } from "./components/PaymentList";
+//import background from "./images/insurance4.jpg";
 
 function App() {
   return (
@@ -34,10 +35,26 @@ function App() {
           <PaymentUpsert />
         </Route>
 
-        <div className="d-flex row text-center justify-content-center">
-          <Route exact path="/">
-            WELCOME TO ONLINE TERM INSURACE
-          </Route>
+        <Route path="/payment-list">
+          <PaymentList />
+        </Route>
+        <div
+          className="row "
+          style={{
+            height: "100vh",
+            backgroundColor: "cyan",
+            fontSize: "80px",
+          }}
+
+          //   fontSize: "80px",
+          //   backgroundImage: `url(${background}) `,
+          // }}
+        >
+          <div className="col  d-flex justify-content-center align-items-center">
+            <Route exact path="/">
+              Welcome to online Term Insurance
+            </Route>
+          </div>
         </div>
       </Switch>
     </Router>

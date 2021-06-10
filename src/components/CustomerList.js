@@ -76,10 +76,10 @@ export function CustomerList() {
                     <input
                       type="button"
                       onClick={() => getCustomerById(item)}
-                      value="Detail"
+                      value="profile"
                       className="btn btn-link"
                     />
-                    /
+                    {/* /
                     <input
                       type="button"
                       onClick={() => updateCustomer(item)}
@@ -92,7 +92,7 @@ export function CustomerList() {
                       value="Delete"
                       onClick={() => deleteCustomer(item, index)}
                       className="btn btn-link text-danger"
-                    />
+                    /> */}
                   </td>
                 </tr>
               ))}
