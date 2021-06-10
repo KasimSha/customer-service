@@ -8,6 +8,7 @@ import { PolicyList } from "./components/PolicyList";
 import { Nav, Navbar } from "react-bootstrap";
 import { AppNavBar } from "./common/AppNavBar";
 import { PaymentUpsert } from "./components/PaymentUpsert";
+import background from "./images/insurance1.jpg";
 
 function App() {
   return (
