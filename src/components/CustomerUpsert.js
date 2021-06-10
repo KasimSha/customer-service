@@ -75,38 +75,74 @@ export function CustomerUpsert() {
       // username :: Speical Character validation
       const re = /^[a-zA-Z0-9\.]+$/;
       const re1 = /^[a-zA-Z\.]+$/;
-      const re2 = /^[a-zA-Z0-9\.]+$/;
+
+      const re2 = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
       if (!re.test(userName)) {
         alert("Username should not contain Special Character");
         return;
       }
       if (!re1.test(firstName)) {
-        alert("Username should not contain Special Character");
+        alert("First name should not contain any special character or Number");
         return;
       }
 
       if (!re1.test(lastName)) {
-        alert("Username should not contain Special Character");
+        alert("Last name should not contain any special character or Number");
         return;
       }
 
-      // if (!re1.test(password)) {
-      //   alert(
-      //     "Password Should Contain Atleast One lowercase, one Uppercase one number and one special character"
-      //   );
-      //   return;
-      // }
+      if (!re2.test(password)) {
+        alert("Password Should Contain Atleast One special character");
+        return;
+      }
 
-      if (age <= 18) {
+      if (age < 18) {
         alert("Your are under Age");
         return;
       }
-      if (age >= 60) {
+      if (age > 60) {
         alert("Your are above Age");
         return;
       }
 
-      // THIS IS REDUX ACTION CALLING
+      if (mobile.length < 10) {
+        alert("please enter valid mobile number");
+        return;
+      }
+
+      if (mobile.length > 10) {
+        alert("please enter valid mobile number");
+        return;
+      }
+
+      if (pinCode.length < 6) {
+        alert("please enter valid Pincode");
+        return;
+      }
+
+      if (pinCode.length < 6) {
+        alert("please enter valid PinCode");
+        return;
+      }
+
+      if (password.length < 8) {
+        alert("Password Should Contains atleast 8 characters");
+        return;
+      }
+
+      // if (
+      //   !(
+      //     gender === "Male" ||
+      //     gender === "male" ||
+      //     gender === "Female" ||
+      //     gender === "female" ||
+      //     gender === "Others" ||
+      //     gender === "others"
+      //   )
+      // ) {
+      //   alert("Please enter valid gender");
+      // }
+
       dispatch(
         createCustomerAction({
           firstName,
