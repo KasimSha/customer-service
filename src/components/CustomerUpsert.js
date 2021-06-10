@@ -71,8 +71,6 @@ export function CustomerUpsert() {
       e.stopPropagation();
       formEL.current.classList.add("was-validated");
     } else {
-      // you can write custom valiadation logic here.
-      // username :: Speical Character validation
       const re = /^[a-zA-Z0-9\.]+$/;
       const re1 = /^[a-zA-Z\.]+$/;
 
@@ -143,7 +141,6 @@ export function CustomerUpsert() {
       //   alert("Please enter valid gender");
       // }
 
-      // THIS IS REDUX ACTION CALLING
       dispatch(
         createCustomerAction({
           firstName,
@@ -162,14 +159,9 @@ export function CustomerUpsert() {
         })
       );
 
-      // A1 sucess
       setSuccessOperation(true);
       setTimeout(() => setSuccessOperation(false), 2000);
 
-      // A2: navigate to another page
-      // history.push("/list-employee");
-
-      // reset the form
       setFirstName("");
       setLastName("");
       setUserName("");
@@ -206,7 +198,6 @@ export function CustomerUpsert() {
       })
     );
 
-    // reset the form
     setFirstName("");
     setLastName("");
     setUserName("");
@@ -235,7 +226,6 @@ export function CustomerUpsert() {
           {state.customer.refemp.id ? "Update Profile" : "New Customer"}
         </h3>
 
-        {/** BELOW THESE TWO TAGS MUST BE CONDITIOANL */}
         {successOperation && (
           <div className="alert alert-success">Opeation Success</div>
         )}
