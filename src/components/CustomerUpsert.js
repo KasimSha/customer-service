@@ -92,9 +92,7 @@ export function CustomerUpsert() {
       }
 
       if (!re2.test(password)) {
-        alert(
-          "Password Should Contain Atleast One lowercase, one Uppercase one number and one special character"
-        );
+        alert("Password Should Contain Atleast One special character");
         return;
       }
 
@@ -108,12 +106,12 @@ export function CustomerUpsert() {
       }
 
       if (mobile.length < 10) {
-        alert("please enter valid number");
+        alert("please enter valid mobile number");
         return;
       }
 
       if (mobile.length > 10) {
-        alert("please enter valid number");
+        alert("please enter valid mobile number");
         return;
       }
 
@@ -124,6 +122,11 @@ export function CustomerUpsert() {
 
       if (pinCode.length < 6) {
         alert("please enter valid PinCode");
+        return;
+      }
+
+      if (password.length < 8) {
+        alert("Password Should Contains atleast 8 characters");
         return;
       }
 
@@ -229,7 +232,7 @@ export function CustomerUpsert() {
       <div className="col-3 col-md-3 d-none d-md-block"></div>
       <div className="col-12 col-md-6">
         <h3 className=" text-center  alert bg-success text-black mt-2">
-          {state.customer.refemp.id ? "Update Customer" : "Create Customer"}
+          {state.customer.refemp.id ? "Update Profile" : "New Customer"}
         </h3>
 
         {/** BELOW THESE TWO TAGS MUST BE CONDITIOANL */}
@@ -385,7 +388,7 @@ export function CustomerUpsert() {
                 className="form-control "
                 style={{ backgroundColor: "lightblue", color: "black" }}
                 placeholder="PinCode"
-                max="999999"
+                // max="999999"
                 min="000000"
                 required
               />
@@ -399,7 +402,7 @@ export function CustomerUpsert() {
                 className="form-control"
                 style={{ backgroundColor: "lightblue", color: "black" }}
                 placeholder="Mobile"
-                max="9999999999"
+                //max="9999999999"
                 min="0000000000"
                 required
               />
@@ -412,7 +415,7 @@ export function CustomerUpsert() {
                 type="button"
                 className="  alert text-white f-2 w-100"
                 style={{ backgroundColor: "blue" }}
-                value="Update Profile"
+                value="Update"
                 onClick={() => updateCustomer()}
               />
             ) : (

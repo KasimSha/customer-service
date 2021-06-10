@@ -22,9 +22,13 @@ function App() {
           <CustomerList />
         </Route>
 
-        <Route exact path="/">
-          <CustomerUpsert />
-        </Route>
+        <div className="row" style={{ height: "100vh", fontSize: "80px" }}>
+          <div className="col  d-flex justify-content-center align-items-center">
+            <Route exact path="/">
+              Welcome to online Term Insurance
+            </Route>
+          </div>
+        </div>
       </Switch>
     </Router>
   );
