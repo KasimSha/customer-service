@@ -7,10 +7,7 @@ import { CustomerReducer } from "./CustomerReducer";
 
 const rootReducer = combineReducers({
   customer: CustomerReducer,
-  // depart : DepartRducer,
-  //vechil: VechuileReucer
 });
 
-// const store = createStore(rootReducer);
 const store = createStore(rootReducer, applyMiddleware(thunk));
 export { store };
