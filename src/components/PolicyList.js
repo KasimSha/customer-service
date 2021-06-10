@@ -73,7 +73,7 @@ export function PolicyList() {
                       value="Details"
                       className="btn btn-link"
                     />
-                    /
+                    {/* /
                     <input
                       type="button"
                       onClick={() => updatePolicy(item)}
@@ -86,7 +86,7 @@ export function PolicyList() {
                       value="Delete"
                       onClick={() => deletePolicy(item, index)}
                       className="btn btn-link text-danger"
-                    />
+                    /> */}
                   </td>
                 </tr>
               ))}

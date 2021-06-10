@@ -195,7 +195,7 @@ export function CustomerUpsert() {
       <div className="col-3 col-md-3 d-none d-md-block"></div>
       <div className="col-12 col-md-6">
         <h3 className=" text-center  alert bg-success text-black mt-2">
-          {state.customer.refemp.id ? "Update Customer" : "Create Customer"}
+          {state.customer.refemp.id ? "Update Profile" : "New Customer"}
         </h3>
 
         {/** BELOW THESE TWO TAGS MUST BE CONDITIOANL */}
